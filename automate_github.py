@@ -1,8 +1,12 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 base_url = "https://api.github.com"
-token = "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"
+token = os.getenv('GITHUB_TOKEN')
 headers = {
     "Authorization": f"Bearer {token}",
     "Accept": "application/vnd.github.v3+json"
